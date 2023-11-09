@@ -74,7 +74,6 @@ if (isset($_SESSION['id'])) {
                         <li><a href="registro_parcelas.php">Registro de Parcelas</a></li>
                         <li><a href="../Menu/Seguimiento_Crecimiento/Seguimiento_Crecimiento.php">Seguimiento del Crecimiento</a></li>
                         <li><a href="../Menu/Cosecha_Producción/Cosecha_Producción.php">Cosecha y Producción</a></li>
-                        <li><a href="../Menu/Control_Plagas_Enfermedades/Control_Plagas_Enfermedades.php">Control de Plagas y Enfermedades</a></li>
                     </ul>
                 </div>
             </div>
@@ -86,8 +85,7 @@ if (isset($_SESSION['id'])) {
                 <div class="segundaParteCard">
                     <h2>Manejo de Recursos</h2>
                     <ul>
-                        <li><a href="../Menu/Riego_Fertilizacion/Riego_Fertilizacion.php">Riego y Fertilización</a></li>
-                        <li><a href="../Menu/Calidad_Suelo/Calidad_Suelo.php">Calidad del Suelo</a></li>
+                        <li><a href="../Menu/Ingresos/Ingresos.php">Ingresos</a></li>
                         <li><a href="../Menu/Registro_Personas/Registro_Jornaleros/Registro_Jornaleros.php">Registro de Personas</a></li>
                     </ul>
                 </div>

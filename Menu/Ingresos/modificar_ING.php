@@ -1,10 +1,10 @@
 <?php
 
-include "modelo/conexion_SC.php";
+include "modelo/conexion_ING.php";
 
 $id = $_GET["id"];
 
-$sql = $conexion_SC->query(" select * from seguimiento_crecimiento where identificador_de_siembra='$id' ");
+$sql = $conexion_ING->query(" select * from ingresos where Cliente='$id' ");
 
 
 ?>
@@ -25,27 +25,34 @@ $sql = $conexion_SC->query(" select * from seguimiento_crecimiento where identif
 <input type="hidden" name="id" value="<?= $_GET["id"] ?>">
 
 <?php 
-include "controlador/modificar_sc.php"; 
+include "controlador/modificar_ing.php"; 
 while ($datos = $sql->fetch_object()) { ?>
 
 <div class="mb-3">
 
-<label for="exampleInputEmail1" class="form-label">Identificador de Siembra</label>
-<input type="text" class="form-control" name="identificador_de_siembra" value="<?= $datos->identificador_de_siembra?>">
+<label for="exampleInputEmail1" class="form-label">Cliente</label>
+<input type="text" class="form-control" name="Cliente" value="<?= $datos->Cliente?>">
 
 </div>
 
 <div class="mb-3">
 
-<label for="exampleInputEmail1" class="form-label">Tipo de Planta</label>
-<input type="text" class="form-control" name="tipo_de_planta" value="<?= $datos->tipo_de_planta?>">
+<label for="exampleInputEmail1" class="form-label">Peso en kg</label>
+<input type="number" class="form-control" name="Peso_en_kg" value="<?= $datos->Peso_en_kg?>">
 
 </div>
 
 <div class="mb-3">
 
-<label for="exampleInputEmail1" class="form-label">Fecha</label>
-<input type="date" class="form-control" name="fecha" value="<?= $datos->fecha?>">
+<label for="exampleInputEmail1" class="form-label">Precio de venta por kg</label>
+<input type="text" class="form-control" name="Precio_de_venta_por_kg" value="<?= $datos->Precio_de_venta_por_kg?>">
+
+</div>
+
+<div class="mb-3">
+
+<label for="exampleInputEmail1" class="form-label">Total de ingresos</label>
+<input type="text" class="form-control" name="Total_de_ingresos" value="<?= $datos->Total_de_ingresos?>">
 
 </div>
 

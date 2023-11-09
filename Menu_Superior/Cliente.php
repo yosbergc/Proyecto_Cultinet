@@ -67,8 +67,6 @@ if (isset($_SESSION['id'])) {
     </div>
         <nav class="menu">
 
-            <a href="../index.php">Salir</a>
-            <a href="../Menu_Superior/Contacto.php">Contacto</a>
 	        <a href="../Vista/Vista_principal.php">Atras</a>
 
         </nav>
