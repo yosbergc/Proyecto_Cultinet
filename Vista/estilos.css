@@ -1,0 +1,219 @@
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'Montserrat Alternates', sans-serif;
+	}
+	.logoImage {
+		height: 40px;
+		object-fit: cover;
+	}	
+	/*Estilos para el encabezado*/
+	.header{
+		display: flex;
+		align-items: center;
+		width: 100%;
+		justify-content: space-between;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		background-color: #1c1b1b;
+		box-shadow: 0px -5px 39px 4px rgba(0,0,0,0.07);
+		-webkit-box-shadow: 0px -5px 39px 4px rgba(0,0,0,0.07);
+		-moz-box-shadow: 0px -5px 39px 4px rgba(0,0,0,0.07);
+	}
+	.partOne {
+		display: flex;
+		align-items: center;
+	}
+	.btn-menu__container{
+		color: rgb(255, 255, 255);
+		font-size: 25px;
+		cursor: pointer;
+		margin-left: 50px;
+	}
+	.menu a{
+		padding: 15px;
+		line-height: normal;
+		text-decoration: none;
+		color: #fffefe;
+		transition: all 0.3s ease;
+		border-bottom: 2px solid transparent;
+		font-size: 15px;
+		margin-right: 5px;
+		font-family: 'Inter', sans-serif;
+	}
+	.userName {
+		font-family: 'Inter', sans-serif;
+		color: white;
+	}
+	.menu a:hover{
+		border-bottom: 2px solid rgb(0, 0, 0);
+		padding-bottom: 5px;
+	}
+	/*Fin de Estilos para el encabezado*/
+
+	/*Menù lateral*/
+	#btn-menu{
+		display: none;
+	}
+	.container-menu{
+		position: absolute;
+		background: rgba(0,0,0,0.5);
+		width: 100%;
+		height: 100vh;
+		top: 0;left: 0;
+		transition: all 500ms ease;
+		opacity: 0;
+		visibility: hidden;
+	}
+	#btn-menu:checked ~ .container-menu{
+		opacity: 1;
+		visibility: visible;
+	}
+	.cont-menu{
+		width: 100%;
+		max-width: 250px;
+		background: #1c1c1c;
+		height: 100vh;
+		position: relative;
+		transition: all 500ms ease;
+		transform: translateX(-100%);
+	}
+	#btn-menu:checked ~ .container-menu .cont-menu{
+		transform: translateX(0%);
+	}
+	.cont-menu nav{
+		transform: translateY(15%);
+	}
+	.cont-menu nav a{
+		display: block;
+		text-decoration: none;
+		padding: 20px;
+		color: palegreen;
+		border-left: 5px solid transparent;
+		transition: all 400ms ease;
+	}
+	.cont-menu nav a:hover{
+		border-left: 5px solid #c7c7c7;
+		background: #2c2f35;
+	}
+	.cont-menu label{
+		position: absolute;
+		right: 5px;
+		top: 10px;
+		color: #fff;
+		cursor: pointer;
+		font-size: 18px;
+	}
+.cardsContainer {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	padding: 10px;
+	padding-top: 100px;
+	margin-top: 50px;
+	justify-items: center;
+	align-items: center;
+	background-color: rgb(250, 253, 245);
+}
+	.card {
+		display: flex;
+		align-items: start;
+		color: rgb(0, 0, 0);
+		height: 200px;
+		margin-bottom: 50px;
+	}
+	.card ul {
+		list-style: none;
+		margin-top: 20px;
+	}
+	.card ul li {
+		margin-bottom: 10px;
+	}
+	.card ul li a {
+		text-decoration: none;
+		font-family: 'Inter';
+		color: black;
+	}
+	.card ul li a:hover {
+		color: rgb(15, 10, 80);
+	}
+	.card h2 {
+		font-family: 'Poppins';
+		font-weight: 600;
+		font-size: 23px;
+		background-color: rgb(253, 255, 154);
+		padding: 5px;
+	}
+	.card-img-container img {
+		height: 50px;
+		width: 50px;
+		object-fit: contain;
+		padding-right: 20px;
+	}
+	main {
+		justify-content: space-around;
+	}
+.divMensaje {
+	background-color: black;
+	position: fixed;
+	bottom: 50px;
+	right: 20px;
+	color: white;
+	font-family: 'Inter';
+	padding: 10px;
+	border-radius: 10px;
+}
+.fila {
+	white-space: nowrap;
+}
+
+.fila:nth-child(1) .celda {
+	background-color: #1c1b1b;
+	color: white;
+	font-weight: 600;
+}
+.celda {
+	border-radius: 10px;
+	border: 1px solid #000000;
+	display: inline-block;
+	padding: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 170px;
+	margin: 2px;
+	background-color: palegreen;
+}
+.formularioBorrar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 50px;
+	padding-bottom: 70px;
+}
+.formularioBorrar #eliminarSiembraBtn {
+	padding: 20px 40px 20px 40px;
+	background-color: palegreen;
+	color: rgb(0, 0, 0);
+	border-radius: 10px;
+	font-family: 'Inter', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	border: none;
+	margin-bottom: 50px;
+    margin-top: 40px;
+}
+.formularioBorrar #identificadorSiembra {
+	height: 35px;
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 300px;
+    margin-top: 10px;
+    align-self: center;
+    padding: 10px;
+}
+#formEliminarSiembra {
+	display: flex;
+	flex-direction: column;
+}

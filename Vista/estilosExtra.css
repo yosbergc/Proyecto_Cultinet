@@ -1,0 +1,44 @@
+.clima {
+    background-color: #98fb98;
+    padding: 50px;
+    color: rgb(0, 0, 0);
+    width: 400px;
+    margin-top: 50px;
+    margin-left: 50px;
+    border-radius: 20px;
+}
+.clima p {
+    font-size: 18px;
+}
+.clima .city {
+    font-size: 50px;
+    font-family: 'Poppins';
+    font-weight: 700;
+}
+
+#temperatura {
+    font-size: 20px;
+    font-family: 'Poppins';
+    font-weight: 700;
+    margin-top: 10px;
+}
+.weatherIcon {
+    width: 150px;
+    object-fit: cover;
+}
+.seccionSuperior {
+    display: flex;
+    align-items: center;
+}
+.graficaUno {
+    width: 500px;
+    height: 250px;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#miGrafico {
+    display: flex;
+    align-self: bottom;
+}

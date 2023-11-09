@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300@500@700&family=Poppins:wght@700&display=swap');
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	background: url(https://static.nationalgeographic.es/files/styles/image_3200/public/banana-fungus.webp?w=1600&h=900);
+	background-size: 100vw 100vh;
+	background-repeat: no-repeat;
+
+}
+.logo {
+	width: 200px;
+	margin-bottom: 20px;
+}
+.capa{
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0,0,0,0.6);
+	z-index: -1;
+	top: 0;left: 0;
+}
+
+.formulario{
+	margin: 15px auto;
+	max-width: 250px;
+	background-color: #1c1b1b;
+	padding: 50px 60px 50px;
+	text-align: center;
+	border-radius: 10px;
+}
+
+.registro{
+	color:palegreen;
+	font-size: 30px;
+	margin-bottom: 20px;
+	position: relative;
+	font-family: 'Poppins', sans-serif;
+}
+.botonIniciodesesion {
+	padding: 20px 40px 20px 40px;
+	background-color: palegreen;
+	color: rgb(0, 0, 0);
+	border-radius: 10px;
+	font-family: 'Inter', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	border: none;
+	margin-bottom: 50px;
+}
+.botonIniciodesesion:hover {
+	background-color: rgb(246, 246, 246);
+	transition: 0.2s;
+}
+.nombres{
+	position: relative;
+	margin: 20px 0;
+}
+
+.nombres input{
+	width: 100%;
+	height: 35px;
+	font-size: 15px;
+	border:none;
+	color: #7b7171;
+	background-color: #f4eeee;
+	margin-top: 10px;
+	border-radius: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-family: 'Inter', sans-serif;
+}
+
+.nombres label{
+	position: absolute;
+	top: 10px;
+	left: 5px;
+	color: palegreen;
+	transform: translateY(-50%);
+	font-size: 15px;
+	pointer-events: none;
+	font-family: 'Inter', sans-serif;
+}
+
+.nombres span::before{
+	position: absolute;
+	top: 30%;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: palegreen;
+}
+
+.nombres input:focus~label{
+	top: -10px;
+	color:palegreen;
+}
+
+.nombres input:focus~span::before{
+	width: 100%;
+	cursor: pointer;
+}
+
+
+.abajo{
+	display: inline-block;
+	text-decoration: none;
+	color: palegreen;
+	padding: 10px 10px;
+	font-family: 'Inter', sans-serif;
+	font-size: 15px;
+}
+
+.cuenta{
+	color: #ffffff;
+	font-family: 'Inter', sans-serif;
+	font-size: 15px;
+}
