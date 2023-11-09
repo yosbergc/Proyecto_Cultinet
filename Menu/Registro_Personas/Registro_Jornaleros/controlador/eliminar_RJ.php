@@ -9,7 +9,7 @@ if (isset($_SESSION['id'])) {
 }
 if (!empty($_GET["id"])) {
     $id = $_GET["id"];
-    $sql = $conexion_RJ->query("DELETE FROM registro_de_jornaleros WHERE nombre_completo='$id'");
+    $sql = $conexion_RJ->query("DELETE FROM registro_de_jornaleros WHERE Nombre_completo='$id'");
     if ($sql == 1) {
         echo '<div class="alert alert-success">Campo eliminada correctamente</div>';
     } else {

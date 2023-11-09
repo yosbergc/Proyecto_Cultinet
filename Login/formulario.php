@@ -30,17 +30,17 @@ if (!$conexion) {
 
         <form method="post" action="">
 
-            <div class="nombres">
+            <div class="Nombres">
                 <label>Nombre y Apellido</label><br>
                 <input type="text" name="Nombre" placeholder="Ingrese su Nombre y Apellido"><br>
             </div>
             
-            <div class="nombres">
+            <div class="Nombres">
                 <label>Correo</label><br>
                 <input type="email" name="Correo" placeholder="Ingrese su Correo"><br>
             </div>
 
-            <div class="nombres">
+            <div class="Nombres">
                 <label>Contraseña</label><br>
                 <input type="password" name="Contrasena" placeholder="Ingrese su Contraseña"><br>
             </div>

@@ -2,17 +2,22 @@
 
 if (!empty($_POST["btnregistrar"])) {
     
-    if (!empty($_POST["identificador_de_siembra"]) and !empty($_POST["tipo_de_planta"]) and !empty($_POST["fecha"]) ) {
+    if (!empty($_POST["Nombre_completo"]) and !empty($_POST["Direccion"]) and !empty($_POST["Cedula"]) and !empty($_POST["Telefono"]) and !empty($_POST["Correo_electronico"]) and !empty($_POST["FechaNac"]) and !empty($_POST["Funcion"]) and !empty($_POST["Genero"]) ) {
 
         $id=$_POST["id"];
-        $identificador_de_siembra=$_POST["identificador_de_siembra"];
-        $tipo_de_planta=$_POST["tipo_de_planta"];
-        $fecha=$_POST["fecha"];
+        $Nombre_completo=$_POST["Nombre_completo"];
+        $Direccion=$_POST["Direccion"];
+        $Cedula=$_POST["Cedula"];
+        $Telefono=$_POST["Telefono"];
+        $Correo_electronico=$_POST["Correo_electronico"];
+        $FechaNac=$_POST["FechaNac"];
+        $Funcion=$_POST["Funcion"];
+        $Genero=$_POST["Genero"];
 
-        $sql=$conexion_SC->query(" update seguimiento_crecimiento set identificador_de_siembra='$identificador_de_siembra', tipo_de_planta='$tipo_de_planta', fecha='$fecha' WHERE identificador_de_siembra='$id' ");
+        $sql=$conexion_RJ->query(" update registro_de_jornaleros set Nombre_completo='$Nombre_completo', Direccion='$Direccion', Cedula='$Cedula', Telefono='$Telefono', Correo_electronico='$Correo_electronico', FechaNac='$FechaNac', Funcion='$Funcion', Genero='$Genero' WHERE Nombre_completo='$id' ");
         
         if ($sql==1) {
-            header("location:Seguimiento_Crecimiento.php");
+            header("location:Registro_Jornaleros.php");
         } else {
             echo"<div class='alert alert-danger'>Error al Modificar</div>";
             

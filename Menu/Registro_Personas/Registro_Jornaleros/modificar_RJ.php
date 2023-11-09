@@ -4,7 +4,7 @@ include "modelo/conexion_RJ.php";
 
 $id = $_GET["id"];
 
-$sql = $conexion_RJ->query(" select * from registro_de_jornaleros where nombre_completo='$id' ");
+$sql = $conexion_RJ->query(" select * from registro_de_jornaleros where Nombre_completo='$id' ");
 
 
 ?>
@@ -31,56 +31,56 @@ while ($datos = $sql->fetch_object()) { ?>
 <div class="mb-3">
 
 <label for="exampleInputEmail1" class="form-label">Nombre completo</label>
-<input type="text" class="form-control" name="nombre_completo" value="<?= $datos->nombre_completo?>">
+<input type="text" class="form-control" name="Nombre_completo" value="<?= $datos->Nombre_completo?>">
 
 </div>
 
 <div class="mb-3">
 
 <label for="exampleInputEmail1" class="form-label">Dirección</label>
-<input type="text" class="form-control" name="direccion" value="<?= $datos->direccion?>">
+<input type="text" class="form-control" name="Direccion" value="<?= $datos->Direccion?>">
 
 </div>
 
 <div class="mb-3">
 
 <label for="exampleInputEmail1" class="form-label">Cédula</label>
-<input type="number" class="form-control" name="cedula" value="<?= $datos->cedula?>">
+<input type="number" class="form-control" name="Cedula" value="<?= $datos->Cedula?>">
 
 </div>
 
 <div class="mb-3">
 
 <label for="exampleInputEmail1" class="form-label">Teléfono</label>
-<input type="number" class="form-control" name="telefono" value="<?= $datos->telefono?>">
+<input type="number" class="form-control" name="Telefono" value="<?= $datos->Telefono?>">
 
 </div>
 
 <div class="mb-3">
 
 <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
-<input type="email" class="form-control" name="correo_electronico" value="<?= $datos->correo_electronico?>">
+<input type="email" class="form-control" name="Correo_electronico" value="<?= $datos->Correo_electronico?>">
 
 </div>
 
 <div class="mb-3">
 
 <label for="exampleInputEmail1" class="form-label">Fecha de Nacimiento</label>
-<input type="date" class="form-control" name="fechaNac" value="<?= $datos->fechaNac?>">
+<input type="date" class="form-control" name="FechaNac" value="<?= $datos->FechaNac?>">
 
 </div>
 
 <div class="mb-3">
 
 <label for="exampleInputEmail1" class="form-label">Función</label>
-<input type="text" class="form-control" name="funcion" value="<?= $datos->funcion?>">
+<input type="text" class="form-control" name="Funcion" value="<?= $datos->Funcion?>">
 
 </div>
 
 <div class="mb-3">
 
 <label for="exampleInputEmail1" class="form-label">Genero</label>
-<select class="form-control" name="genero" value="<?= $datos->genero?>">
+<select class="form-control" name="Genero" value="<?= $datos->Genero?>">
 			<option value=""></option>
 			<option value="Masculino">Masculino</option>
 			<option value="Femenino">Femenino</option>

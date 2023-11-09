@@ -1,10 +1,10 @@
 <?php
 
-include "modelo/conexion_SC.php";
+include "modelo/conexion_RJ.php";
 
 $id = $_GET["id"];
 
-$sql = $conexion_SC->query(" select * from seguimiento_crecimiento where identificador_de_siembra='$id' ");
+$sql = $conexion_RJ->query(" select * from registro_de_jornaleros where Nombre_completo='$id' ");
 
 
 ?>
@@ -25,30 +25,69 @@ $sql = $conexion_SC->query(" select * from seguimiento_crecimiento where identif
 <input type="hidden" name="id" value="<?= $_GET["id"] ?>">
 
 <?php 
-include "controlador/modificar_sc.php"; 
+include "controlador/modificar_rj.php"; 
 while ($datos = $sql->fetch_object()) { ?>
 
 <div class="mb-3">
 
-<label for="exampleInputEmail1" class="form-label">Identificador de Siembra</label>
-<input type="text" class="form-control" name="identificador_de_siembra" value="<?= $datos->identificador_de_siembra?>">
+<label for="exampleInputEmail1" class="form-label">Nombre completo</label>
+<input type="text" class="form-control" name="Nombre_completo" value="<?= $datos->Nombre_completo?>">
 
 </div>
 
 <div class="mb-3">
 
-<label for="exampleInputEmail1" class="form-label">Tipo de Planta</label>
-<input type="text" class="form-control" name="tipo_de_planta" value="<?= $datos->tipo_de_planta?>">
+<label for="exampleInputEmail1" class="form-label">Dirección</label>
+<input type="text" class="form-control" name="Direccion" value="<?= $datos->Direccion?>">
 
 </div>
 
 <div class="mb-3">
 
-<label for="exampleInputEmail1" class="form-label">Fecha</label>
-<input type="date" class="form-control" name="fecha" value="<?= $datos->fecha?>">
+<label for="exampleInputEmail1" class="form-label">Cédula</label>
+<input type="number" class="form-control" name="Cedula" value="<?= $datos->Cedula?>">
 
 </div>
 
+<div class="mb-3">
+
+<label for="exampleInputEmail1" class="form-label">Teléfono</label>
+<input type="number" class="form-control" name="Telefono" value="<?= $datos->Telefono?>">
+
+</div>
+
+<div class="mb-3">
+
+<label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+<input type="email" class="form-control" name="Correo_electronico" value="<?= $datos->Correo_electronico?>">
+
+</div>
+
+<div class="mb-3">
+
+<label for="exampleInputEmail1" class="form-label">Fecha de Nacimiento</label>
+<input type="date" class="form-control" name="FechaNac" value="<?= $datos->FechaNac?>">
+
+</div>
+
+<div class="mb-3">
+
+<label for="exampleInputEmail1" class="form-label">Función</label>
+<input type="text" class="form-control" name="Funcion" value="<?= $datos->Funcion?>">
+
+</div>
+
+<div class="mb-3">
+
+<label for="exampleInputEmail1" class="form-label">Genero</label>
+<select class="form-control" name="Genero" value="<?= $datos->Genero?>">
+			<option value=""></option>
+			<option value="Masculino">Masculino</option>
+			<option value="Femenino">Femenino</option>
+			<option value="39 Tipo de Gays">39 Tipo de Gays</option>
+		</select> 
+
+</div>
 
 <?php }
 

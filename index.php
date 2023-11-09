@@ -17,12 +17,12 @@
 
         <form method="POST" action="login/validar.php">
 
-            <div class="nombres">
+            <div class="Nombres">
                 <label>Correo</label><br>
                 <input type="email" name="Correo" placeholder="Ingrese su correo"><br>
             </div>
             
-            <div class="nombres">
+            <div class="Nombres">
                 <label>Contraseña</label><br>
                 <input type="password" name="Contrasena" placeholder="Ingrese su contraseña"><br>
             </div>
