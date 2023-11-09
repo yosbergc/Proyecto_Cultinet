@@ -1,10 +1,10 @@
 <?php
 
-include "modelo/conexion_SC.php";
+include "modelo/conexion_PJ.php";
 
 $id = $_GET["id"];
 
-$sql = $conexion_SC->query(" select * from seguimiento_crecimiento where identificador_de_siembra='$id' ");
+$sql = $conexion_PJ->query(" select * from pagos_a_jornaleros where Nombre_del_jornalero='$id' ");
 
 
 ?>
@@ -25,30 +25,55 @@ $sql = $conexion_SC->query(" select * from seguimiento_crecimiento where identif
 <input type="hidden" name="id" value="<?= $_GET["id"] ?>">
 
 <?php 
-include "controlador/modificar_sc.php"; 
+include "controlador/modificar_pj.php"; 
 while ($datos = $sql->fetch_object()) { ?>
 
 <div class="mb-3">
 
-<label for="exampleInputEmail1" class="form-label">Identificador de Siembra</label>
-<input type="text" class="form-control" name="identificador_de_siembra" value="<?= $datos->identificador_de_siembra?>">
+<label for="exampleInputEmail1" class="form-label">Nombre del  jornalero</label>
+<input type="text" class="form-control" name="Nombre_del_jornalero" value="<?= $datos->Nombre_del_jornalero?>">
 
 </div>
 
 <div class="mb-3">
 
-<label for="exampleInputEmail1" class="form-label">Tipo de Planta</label>
-<input type="text" class="form-control" name="tipo_de_planta" value="<?= $datos->tipo_de_planta?>">
+<label for="exampleInputEmail1" class="form-label">Fecha de pago</label>
+<input type="date" class="form-control" name="Fecha_de_pago" value="<?= $datos->Fecha_de_pago?>">
 
 </div>
 
 <div class="mb-3">
 
-<label for="exampleInputEmail1" class="form-label">Fecha</label>
-<input type="date" class="form-control" name="fecha" value="<?= $datos->fecha?>">
+<label for="exampleInputEmail1" class="form-label">Hora y tarea trabajada</label>
+<input type="text" class="form-control" name="Hora_y_tarea_trabajada" value="<?= $datos->Hora_y_tarea_trabajada?>">
 
 </div>
 
+<div class="mb-3">
+
+<label for="exampleInputEmail1" class="form-label">Monto a pagar</label>
+<input type="number" class="form-control" name="Monto_a_pagar" value="<?= $datos->Monto_a_pagar?>">
+
+</div>
+
+<div class="mb-3">
+
+<label for="exampleInputEmail1" class="form-label">Metodo de pago</label>
+<select class="form-control" name="Metodo_de_pago" value="<?= $datos->Metodo_de_pago?>">
+			<option value="">Seleccione...</option>
+			<option value="Efectivo">Efectivo</option>
+			<option value="Transferencia">Transferencia</option>
+			<option value="Pago_movil">Pago móvil</option>
+		</select> 
+
+</div>
+
+<div class="mb-3">
+
+<label for="exampleInputEmail1" class="form-label">Comentario</label>
+<input type="text" class="form-control" name="Comentario" value="<?= $datos->Comentario?>">
+
+</div>
 
 <?php }
 

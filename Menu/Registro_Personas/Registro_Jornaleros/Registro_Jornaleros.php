@@ -81,7 +81,7 @@ include "controlador/eliminar_RJ.php"; //conexion de eliminar//
 
     <label for="exampleInputEmail1" class="form-label">Genero</label>
     <select class="form-control" name="Genero">
-			<option value=""></option>
+			<option value="">Seleccione...</option>
 			<option value="Masculino">Masculino</option>
 			<option value="Femenino">Femenino</option>
 			<option value="39 Tipo de Gays">39 Tipo de Gays</option>
@@ -147,6 +147,13 @@ include "controlador/eliminar_RJ.php"; //conexion de eliminar//
       <br>
       <br>
       <a href="../Registro_Proveedores/Registro_Proveedores.php">Registro Proveedores</a>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+      
+      <a href="../Pagos_Jornaleros/Pago_Jornaleros.php">Ir a Pagos</a>
 
   </body>
 </html>

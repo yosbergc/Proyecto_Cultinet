@@ -2,78 +2,138 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pago a Proveedores</title>
-	<a href="../../Vista/Vista_principal.php">Atras</a>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
-    <link rel="stylesheet" href="Pago_Proveedores
-    .css">
-    
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();   
-        });
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagos de Proveedores</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/1fef534ddd.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="page-header clearfix">
-                        <h2 class="pull-left">Pago a Proveedores</h2>
-                        <a href="create.php" class="btn btn-success pull-right">Agregar</a>
-                    </div>
-                    <?php
-                    // Include config file
-                    require_once "config.php";
-                    
-                    // Attempt select query execution
-                    $sql = "SELECT * FROM employees";
-                    if($result = mysqli_query($link, $sql)){
-                        if(mysqli_num_rows($result) > 0){
-                            echo "<table class='table table-bordered table-striped'>";
-                                echo "<thead>";
-                                    echo "<tr>";
-                                        echo "<th>ID</th>";
-                                        echo "<th>Nombre</th>";
-                                        echo "<th>Dirección</th>";
-                                        echo "<th>Sueldo Semanal</th>";
-                                        echo "<th>Acción</th>";
-                                    echo "</tr>";
-                                echo "</thead>";
-                                echo "<tbody>";
-                                while($row = mysqli_fetch_array($result)){
-                                    echo "<tr>";
-                                        echo "<td>" . $row['id'] . "</td>";
-                                        echo "<td>" . $row['name'] . "</td>";
-                                        echo "<td>" . $row['address'] . "</td>";
-                                        echo "<td>" . $row['salary'] . "</td>";
-                                        echo "<td>";
-                                            echo "<a href='read.php?id=". $row['id'] ."' title='Ver' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
-                                            echo "<a href='update.php?id=". $row['id'] ."' title='Actualizar' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
-                                            echo "<a href='delete.php?id=". $row['id'] ."' title='Borrar' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
-                                        echo "</td>";
-                                    echo "</tr>";
-                                }
-                                echo "</tbody>";                            
-                            echo "</table>";
-                            // Free result set
-                            mysqli_free_result($result);
-                        } else{
-                            echo "<p class='lead'><em>No records were found.</em></p>";
-                        }
-                    } else{
-                        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-                    }
+    
+<h1 class="text-center p-2">Pagos de Proveedores</h1>  
+
+<?php
+
+include "controlador/eliminar_PP.php"; //conexion de eliminar//
+
+?>
+
+
+<?php 
+  include "modelo/conexion_PP.php";
+  include "controlador/registro_PP.php";
+  ?>
+
+<div class="container-fluid row">
+
+<form class="col-4 p-3" method="POST">
+
+  <!-- ----------------------------------------------------------------------------------------------------------- -->
+  <div class="mb-3">
+
+    <label for="exampleInputEmail1" class="form-label">Nombre de empresa o proveedor</label>
+    <input type="text" class="form-control" name="Nombre_empresa_proveedor">
+   
+  </div>
+  <!-- ----------------------------------------------------------------------------------------------------------- -->
+  <div class="mb-3">
+
+    <label for="exampleInputEmail1" class="form-label">Monto a pagar</label>
+    <input type="text" class="form-control" name="Monto_a_pagar">
+   
+  </div>
+  <!-- ----------------------------------------------------------------------------------------------------------- -->
+  <div class="mb-3">
+
+    <label for="exampleInputEmail1" class="form-label">Fecha de pago</label>
+    <input type="date" class="form-control" name="Fecha_de_pago">
+   
+  </div>
+  <!-- ----------------------------------------------------------------------------------------------------------- -->
+  <div class="mb-3">
+
+    <label for="exampleInputEmail1" class="form-label">Numero de factura</label>
+    <input type="number" class="form-control" name="Numero_de_factura">
+   
+  </div>
+  <!-- ----------------------------------------------------------------------------------------------------------- -->
+  <div class="mb-3">
+
+    <label for="exampleInputEmail1" class="form-label">Metodo de pago</label>
+    <select class="form-control" name="Metodo_de_pago">
+			<option value="">Seleccione...</option>
+			<option value="Efectivo">Efectivo</option>
+			<option value="Transferencia">Transferencia</option>
+			<option value="Pago_movil">Pago móvil</option>
+			<option value="Zelle">Zelle</option>
+			<option value="Zinli">Zinli</option>
+			<option value="Paypal">Paypal</option>
+		</select>
+
+  </div>
+<!-- ----------------------------------------------------------------------------------------------------------- -->
+  <div class="mb-3">
+
+    <label for="exampleInputEmail1" class="form-label">Comentario</label>
+    <input type="text" class="form-control" name="Comentario">
+
+  </div>
+<!-- ----------------------------------------------------------------------------------------------------------- -->
  
-                    // Close connection
-                    mysqli_close($link);
-                    ?>
-                </div>
-            </div>        
-        </div>
-    </div>
-</body>
+  
+<button type="submit" class="btn btn-primary" name="btnregistrar" value="ok">Pagar</button>
+
+
+</form>
+
+
+<div class="col-8 p-4">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre de empresa o proveedor</th>
+      <th scope="col">Monto a pagar</th>
+      <th scope="col">Fecha de pago</th>
+      <th scope="col">Numero de factura</th>
+      <th scope="col">Metodo de pago</th>
+      <th scope="col">Comentario</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <?php
+    include "modelo/conexion_PP.php";
+    $sql=$conexion_PP->query(" SELECT * FROM pagos_a_proveedores");
+    while ($datos = $sql->fetch_object()) { ?>
+    
+    <tr>
+      <td><?= $datos->Nombre_empresa_proveedor ?></td>
+      <td><?= $datos->Monto_a_pagar ?></td>
+      <td><?= $datos->Fecha_de_pago ?></td>
+      <td><?= $datos->Numero_de_factura ?></td>
+      <td><?= $datos->Metodo_de_pago ?></td>
+      <td><?= $datos->Comentario ?></td>
+      <td>
+        <a href="modificar_PP.php?id=<?= $datos->Nombre_empresa_proveedor ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+        <a href="Pago_Proveedores.php?id=<?= $datos->Nombre_empresa_proveedor ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+      </td>
+    </tr>
+
+    <?php }
+    ?>
+
+  </tbody>
+</table>
+</div>
+
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+      
+      <br>
+      <br>
+      <br>
+      <a href="../Registro_Proveedores/Registro_Proveedores.php">Atras</a>
+      
+
+  </body>
 </html>

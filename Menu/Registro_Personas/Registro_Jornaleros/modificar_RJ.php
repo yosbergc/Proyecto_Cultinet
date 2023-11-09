@@ -81,7 +81,7 @@ while ($datos = $sql->fetch_object()) { ?>
 
 <label for="exampleInputEmail1" class="form-label">Genero</label>
 <select class="form-control" name="Genero" value="<?= $datos->Genero?>">
-			<option value=""></option>
+			<option value="">Seleccione...</option>
 			<option value="Masculino">Masculino</option>
 			<option value="Femenino">Femenino</option>
 			<option value="39 Tipo de Gays">39 Tipo de Gays</option>
