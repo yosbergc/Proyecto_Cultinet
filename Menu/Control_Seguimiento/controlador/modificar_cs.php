@@ -4,6 +4,7 @@ if (!empty($_POST["btnregistrar"])) {
     
     if (!empty($_POST["identificador_de_siembra"]) and !empty($_POST["tipo_de_platano"]) and !empty($_POST["fecha"]) and !empty($_POST["comentario"]) ) {
 
+        $id=$_POST["id"];
         $identificador_de_siembra=$_POST["identificador_de_siembra"];
         $tipo_de_platano=$_POST["tipo_de_platano"];
         $fecha=$_POST["fecha"];
