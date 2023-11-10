@@ -1,10 +1,10 @@
 <?php
 
-include "modelo/conexion_SC.php";
+include "modelo/conexion_CS.php";
 
 $id = $_GET["id"];
 
-$sql = $conexion_SC->query(" select * from seguimiento_crecimiento where identificador_de_siembra='$id' ");
+$sql = $conexion_CS->query(" select * from control_y_seguimiento where identificador_de_siembra='$id' ");
 
 
 ?>
@@ -25,20 +25,20 @@ $sql = $conexion_SC->query(" select * from seguimiento_crecimiento where identif
 <input type="hidden" name="id" value="<?= $_GET["id"] ?>">
 
 <?php 
-include "controlador/modificar_sc.php"; 
+include "controlador/modificar_CS.php"; 
 while ($datos = $sql->fetch_object()) { ?>
 
 <div class="mb-3">
 
-<label for="exampleInputEmail1" class="form-label">Identificador de Siembra</label>
+<label for="exampleInputEmail1" class="form-label">Identificador de siembra</label>
 <input type="text" class="form-control" name="identificador_de_siembra" value="<?= $datos->identificador_de_siembra?>">
 
 </div>
 
 <div class="mb-3">
 
-<label for="exampleInputEmail1" class="form-label">Tipo de Planta</label>
-<input type="text" class="form-control" name="tipo_de_planta" value="<?= $datos->tipo_de_planta?>">
+<label for="exampleInputEmail1" class="form-label">Tipo de platano</label>
+<input type="text" class="form-control" name="tipo_de_platano" value="<?= $datos->tipo_de_platano?>">
 
 </div>
 
@@ -49,6 +49,12 @@ while ($datos = $sql->fetch_object()) { ?>
 
 </div>
 
+<div class="mb-3">
+
+<label for="exampleInputEmail1" class="form-label">Comentario</label>
+<input type="text" class="form-control" name="comentario" value="<?= $datos->comentario?>">
+
+</div>
 
 <?php }
 

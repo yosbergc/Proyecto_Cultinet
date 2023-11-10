@@ -58,6 +58,7 @@ if (isset($_SESSION['id'])) {
     <link rel="stylesheet" href="style_cliente.css">
     <link rel="stylesheet" href="../Vista/estilos.css">
     <title>Cliente</title>
+    <link rel="icon" type="../Favicon.png" href="../Favicon.png">
     <script src="notifications.js"></script>
 </head>
 <body>

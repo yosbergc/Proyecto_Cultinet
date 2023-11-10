@@ -16,6 +16,8 @@ if (isset($_SESSION['id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="../Favicon.png" href="../Favicon.png">
+
     <title>Vista Principal</title>
     <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="estilosExtra.css">
@@ -71,9 +73,9 @@ if (isset($_SESSION['id'])) {
                 <div class="segundaParteCard">
                     <h2>Gestión de Parcelas</h2>
                     <ul>
-                        <li><a href="registro_parcelas.php">Registro de Parcelas</a></li>
-                        <li><a href="../Menu/Seguimiento_Crecimiento/Seguimiento_Crecimiento.php">Seguimiento del Crecimiento</a></li>
-                        <li><a href="../Menu/Cosecha_Producción/Cosecha_Producción.php">Cosecha y Producción</a></li>
+                        <li><a href="../Menu/Registro_Parcela/Registro_parcela.php">Registro de Parcela</a></li>
+                        <li><a href="../Menu/Control_Seguimiento/Control_Seguimiento.php">Control y Seguimiento</a></li>
+                        <li><a href="../Menu/Cosecha_Producción/Cosecha_Produccion.php">Cosecha y Producción</a></li>
                     </ul>
                 </div>
             </div>
@@ -87,6 +89,7 @@ if (isset($_SESSION['id'])) {
                     <ul>
                         <li><a href="../Menu/Ingresos/Ingresos.php">Ingresos</a></li>
                         <li><a href="../Menu/Registro_Personas/Registro_Jornaleros/Registro_Jornaleros.php">Registro de Personas</a></li>
+                        <li><a href="../Menu/Gastos/Gastos.php">Gastos</a></li>
                     </ul>
                 </div>
             </div>
@@ -98,7 +101,7 @@ if (isset($_SESSION['id'])) {
                 <div class="segundaParteCard">
                     <h2>Notificaciones y Alertas</h2>
                     <ul>
-                        <li><a href="../Menu/Datos_Meteorologico/Datos_Meteorologico.php">Datos Meteorológicos</a></li>
+                        <li><a href="../Menu/Datos_Meteorologico/Datos_Meteorologico.php">Emergencias Naturales</a></li>
                     </ul>
                 </div>
             </div>

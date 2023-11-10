@@ -15,7 +15,8 @@ if (isset($_SESSION['id'])) {
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Vista Principal</title>
+	<title>Registro de Parcela</title>
+    <link rel="icon" type="../Favicon.png" href="../Favicon.png">
 	<link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="../Menu_Superior/style_cliente.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,9 +32,6 @@ if (isset($_SESSION['id'])) {
 		<img src="../logo.png" alt="" class="logoImage" href="">
 		</div>
 			<nav class="menu">
-				<a href="../Menu_Superior/Cliente.php">Cliente</a>
-				<a href="../Menu_Superior/Contacto.php">Contacto</a>
-				<a href="../index.php">Salir</a>
                 <a href="Vista_principal.php">Atras</a>
 			</nav>
 		<div class="user">
