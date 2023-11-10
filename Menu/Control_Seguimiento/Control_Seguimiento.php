@@ -90,8 +90,8 @@ include "controlador/eliminar_CS.php"; //conexion de eliminar//
       <td><?= $datos->comentario ?></td>
 
       <td>
-        <a href="modificar_CS.php ?id=<?= $datos->identificador_de_siembra ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-        <a href="Control_Seguimiento.php ?id=<?= $datos->identificador_de_siembra ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+      <a href="modificar_CS.php?id=<?= $datos->identificador_de_siembra ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+      <a href="Control_Seguimiento.php?id=<?= $datos->identificador_de_siembra ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash-can"></i></a>
       </td>
 
     </tr>
