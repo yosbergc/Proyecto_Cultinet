@@ -1,10 +1,10 @@
 <?php
 
-include "modelo/conexion_PP.php";
+include "modelo/conexion_PC.php";
 
 $id = $_GET["id"];
 
-$sql = $conexion_PP->query(" select * from pagos_a_proveedores where Nombre_empresa_proveedor='$id' ");
+$sql = $conexion_PC->query(" select * from pagos_compras where Nombre_empresa_proveedor='$id' ");
 
 
 ?>
@@ -25,7 +25,7 @@ $sql = $conexion_PP->query(" select * from pagos_a_proveedores where Nombre_empr
 <input type="hidden" name="id" value="<?= $_GET["id"] ?>">
 
 <?php 
-include "controlador/modificar_pp.php"; 
+include "controlador/modificar_pc.php"; 
 while ($datos = $sql->fetch_object()) { ?>
 
 <div class="mb-3">
@@ -73,10 +73,31 @@ while ($datos = $sql->fetch_object()) { ?>
 
 <div class="mb-3">
 
-<label for="exampleInputEmail1" class="form-label">Comentario</label>
-<input type="text" class="form-control" name="Comentario" value="<?= $datos->Comentario?>">
+<label for="exampleInputEmail1" class="form-label">Descripcion</label>
+<input type="text" class="form-control" name="Descripcion" value="<?= $datos->Descripcion?>">
 
 </div>
+
+<div class="mb-3">
+
+    <label for="exampleInputEmail1" class="form-label">Categoria de gastos</label>
+    <select class="form-control" name="Categoria_de_gastos" value="<?= $datos->Descripcion?>">
+      <option value="">Seleccione...</option>
+      <option value="Mantenimiento">Mantenimiento</option>
+      <option value="Maquinaria">Maquinaria</option>
+      <option value="Siembra">Siembra</option>
+      <option value="Cosecha">Cosecha</option>
+      <option value="Herramientas">Herramientas</option>
+    </select>
+
+  </div>
+
+<div class="mb-3">
+
+    <label for="exampleInputEmail1" class="form-label">Observaciones</label>
+    <input type="text" class="form-control" name="Observaciones" value="<?= $datos->Descripcion?>">
+
+  </div>
 
 <?php }
 

@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagos de Proveedores</title>
+    <title>Pagos de Compras</title>
     <link rel="icon" type="../../../Favicon.png" href="../../../Favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/1fef534ddd.js" crossorigin="anonymous"></script>
 </head>
 <body>
     
-<h1 class="text-center p-2">Pagos de Proveedores</h1>  
+<h1 class="text-center p-2">Pagos de Compras</h1>  
 
 <?php
 
-include "controlador/eliminar_PP.php"; //conexion de eliminar//
+include "controlador/eliminar_PC.php"; //conexion de eliminar//
 
 ?>
 
 
 <?php 
-  include "modelo/conexion_PP.php";
-  include "controlador/registro_PP.php";
+  include "modelo/conexion_PC.php";
+  include "controlador/registro_PC.php";
   ?>
 
 <div class="container-fluid row">
@@ -74,13 +74,35 @@ include "controlador/eliminar_PP.php"; //conexion de eliminar//
 <!-- ----------------------------------------------------------------------------------------------------------- -->
   <div class="mb-3">
 
-    <label for="exampleInputEmail1" class="form-label">Comentario</label>
-    <input type="text" class="form-control" name="Comentario">
+    <label for="exampleInputEmail1" class="form-label">Descripcion</label>
+    <input type="text" class="form-control" name="Descripcion">
 
   </div>
 <!-- ----------------------------------------------------------------------------------------------------------- -->
- 
+  <div class="mb-3">
+
+    <label for="exampleInputEmail1" class="form-label">Categoria de gastos</label>
+    <select class="form-control" name="Categoria_de_gastos">
+      <option value="">Seleccione...</option>
+      <option value="Mantenimiento">Mantenimiento</option>
+      <option value="Maquinaria">Maquinaria</option>
+      <option value="Siembra">Siembra</option>
+      <option value="Cosecha">Cosecha</option>
+      <option value="Herramientas">Herramientas</option>
+    </select>
+
+  </div>
+<!-- ----------------------------------------------------------------------------------------------------------- -->
   
+  <div class="mb-3">
+
+    <label for="exampleInputEmail1" class="form-label">Observaciones</label>
+    <input type="text" class="form-control" name="Observaciones">
+
+  </div>
+<!-- ----------------------------------------------------------------------------------------------------------- -->
+
+
 <button type="submit" class="btn btn-primary" name="btnregistrar" value="ok">Pagar</button>
 
 
@@ -96,14 +118,16 @@ include "controlador/eliminar_PP.php"; //conexion de eliminar//
       <th scope="col">Fecha de pago</th>
       <th scope="col">Numero de factura</th>
       <th scope="col">Metodo de pago</th>
-      <th scope="col">Comentario</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Categoria_de_gastos</th>
+      <th scope="col">Observaciones</th>
     </tr>
   </thead>
   <tbody>
 
     <?php
-    include "modelo/conexion_PP.php";
-    $sql=$conexion_PP->query(" SELECT * FROM pagos_a_proveedores");
+    include "modelo/conexion_PC.php";
+    $sql=$conexion_PC->query(" SELECT * FROM pagos_compras");
     while ($datos = $sql->fetch_object()) { ?>
     
     <tr>
@@ -112,10 +136,12 @@ include "controlador/eliminar_PP.php"; //conexion de eliminar//
       <td><?= $datos->Fecha_de_pago ?></td>
       <td><?= $datos->Numero_de_factura ?></td>
       <td><?= $datos->Metodo_de_pago ?></td>
-      <td><?= $datos->Comentario ?></td>
+      <td><?= $datos->Descripcion ?></td>
+      <td><?= $datos->Categoria_de_gastos ?></td>
+      <td><?= $datos->Observaciones ?></td>
       <td>
-        <a href="modificar_PP.php?id=<?= $datos->Nombre_empresa_proveedor ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-        <a href="Pago_Proveedores.php?id=<?= $datos->Nombre_empresa_proveedor ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+        <a href="modificar_PC.php?id=<?= $datos->Nombre_empresa_proveedor ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+        <a href="Pagos_Compras.php?id=<?= $datos->Nombre_empresa_proveedor ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash-can"></i></a>
       </td>
     </tr>
 
@@ -129,11 +155,13 @@ include "controlador/eliminar_PP.php"; //conexion de eliminar//
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
+
+     <a href="../Pagos_Jornaleros/Pago_Jornaleros.php">Pagos Jornaleros</a>
       
       <br>
       <br>
       <br>
-      <a href="../Registro_Proveedores/Registro_Proveedores.php">Atras</a>
+      <a href="../../../Vista/Vista_principal.php">Atras</a>
       
 
   </body>

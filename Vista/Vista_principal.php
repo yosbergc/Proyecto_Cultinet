@@ -89,7 +89,7 @@ if (isset($_SESSION['id'])) {
                     <ul>
                         <li><a href="../Menu/Ingresos/Ingresos.php">Ingresos</a></li>
                         <li><a href="../Menu/Registro_Personas/Registro_Jornaleros/Registro_Jornaleros.php">Registro de Personas</a></li>
-                        <li><a href="../Menu/Gastos/Gastos.php">Gastos</a></li>
+                        <li><a href="../Menu/Gastos/Pagos_Compras/Pagos_Compras.php">Gastos</a></li>
                     </ul>
                 </div>
             </div>

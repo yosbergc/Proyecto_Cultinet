@@ -148,10 +148,6 @@ include "controlador/eliminar_RJ.php"; //conexion de eliminar//
       <br>
       <br>
       <a href="../Registro_Proveedores/Registro_Proveedores.php">Registro Proveedores</a>
-      <br>
-      <br>
-      
-      <a href="../Pagos_Jornaleros/Pago_Jornaleros.php">Ir a Pagos</a>
 
   </body>
 </html>

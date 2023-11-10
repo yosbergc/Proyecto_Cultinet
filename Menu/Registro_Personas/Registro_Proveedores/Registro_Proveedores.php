@@ -127,9 +127,6 @@ include "controlador/eliminar_RP.php"; //conexion de eliminar//
     <br>
       <a href="../Registro_Jornaleros/Registro_Jornaleros.php">Atras</a>
 
-      <br>
-      <a href="../Pagos_Proveedores/Pago_Proveedores.php">Ir a Pagos</a>
-
 
   </body>
 </html>

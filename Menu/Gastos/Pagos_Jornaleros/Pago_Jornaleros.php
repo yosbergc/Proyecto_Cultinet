@@ -130,7 +130,7 @@ include "controlador/eliminar_PJ.php"; //conexion de eliminar//
       <br>
       <br>
       <br>
-      <a href="../Registro_Jornaleros/Registro_Jornaleros.php">Atras</a>
+      <a href="../Pagos_Compras/Pagos_Compras.php">Atras</a>
       
 
   </body>
